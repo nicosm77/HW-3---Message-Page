@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 style="color: black; font-family: Cursive;">{% block title %}Lets see the messages! !{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  
+    {% for msg in messages %}
+        <tr>
+	    <br>
+	    Message:
+            <td>{{msg[1]}}</td>
+	    <br>
+	    Author:
+            <td>{{msg[0]}}</td>
+    	    <br>
+        </tr>
+    {% endfor %}
+
+{% endblock %}

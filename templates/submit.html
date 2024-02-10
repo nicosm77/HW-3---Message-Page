@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 style="color: black; font-family: Cursive;">{% block title %}Put down your thoughts here!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+      <label for="message">Your message here:</label>
+      <input type="text" name="message" id="message">
+      <br>
+      <label for="name">Name/Handle:</label>
+      <input type="text" name="name" id="name">
+      <br>
+      <input type="submit" value="Submit message!">
+  </form>
+
+  {% if name %}
+     <br> 
+     Thanks {{ name}} for the message! To submit another message, hit "Submit a message" above!
+  {% endif %}
+
+  {% if error %}
+     <br> 
+     Please resubmit!
+  {% endif %}
+
+{% endblock %}
+  
